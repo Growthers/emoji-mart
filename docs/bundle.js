@@ -24323,8 +24323,8 @@ function (_React$PureComponent) {
         var iconId = id.startsWith('custom-') ? 'custom' : id;
         return _react["default"].createElement("button", {
           key: id,
-          "aria-label": i18n.categories[id],
-          title: i18n.categories[id],
+          "aria-label": i18n.categories[iconId],
+          title: i18n.categories[iconId],
           "data-index": i,
           type: 'button',
           onClick: _this2.handleClick,
@@ -24934,7 +24934,9 @@ function (_React$PureComponent) {
   }, {
     key: "handleChange",
     value: function handleChange() {
-      this.search(this.input.value);
+      if (this.input) {
+        this.search(this.input.value);
+      }
     }
   }, {
     key: "handleKeyUp",
