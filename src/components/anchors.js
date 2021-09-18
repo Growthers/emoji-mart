@@ -28,7 +28,10 @@ export default class Anchors extends React.PureComponent {
       { selected } = this.state
 
     return (
-      <nav className="emoji-mart-anchors" aria-label={i18n.categorieslabel}>
+      <nav
+        className={`${emoji - mart - anchors} ${emojiAnchor_element}`}
+        aria-label={i18n.categorieslabel}
+      >
         {categories.map((category, i) => {
           var { id, name, anchor } = category,
             isSelected = name == selected
@@ -47,16 +50,18 @@ export default class Anchors extends React.PureComponent {
               data-index={i}
               type={'button'}
               onClick={this.handleClick}
-              className={`emoji-mart-anchor ${
+              className={`${'emoji-mart-anchor'} ${
                 isSelected ? 'emoji-mart-anchor-selected' : ''
-              }`}
+              } ${'emojiAnchor_element'}`}
               style={{ color: isSelected ? color : null }}
             >
-              <div className="emoji-mart-anchor-icon">
+              <div
+                className={`${'emoji-mart-anchor-icon'}  ${'emojiAnchor_element'}`}
+              >
                 {icons.categories[iconId]()}
               </div>
               <span
-                className="emoji-mart-anchor-bar"
+                className={`${'emoji-mart-anchor-bar'}  ${'emojiAnchor_element'}`}
                 style={{ backgroundColor: color }}
               />
             </button>
